@@ -323,6 +323,7 @@ Valor Resgatado = Capital Aplicado + Rendimento - IR - Taxa de Administração
 Observação: A Taxa Diária é informada percentualmente pelo usuário mas
 deve ser convertida para ser utilizada na fórmula do cálculo do rendimento.
 """
+# import os
 # TAXA_ADMINISTRACAO = 10
 
 # capital_str = input('nos diga o capital investido: ')
@@ -351,4 +352,8 @@ deve ser convertida para ser utilizada na fórmula do cálculo do rendimento.
 #     valor_resgatado = capital_float + rendimento - imposto_renda - TAXA_ADMINISTRACAO
 
 
-# print(f'o valor resgatado foi de: {valor_resgatado:,.2f}')
+# os.system('cls')
+# print(f'''
+#       o valor do rendimento foi             =       {rendimento}
+#       o valor do imposto de renda foi       =       {imposto_renda}
+#       o valor resgatado foi                 =       {valor_resgatado:,.2f}''')

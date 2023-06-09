@@ -1,3 +1,5 @@
+# import os
+
 """ Pelas regras da CBV, a pontuação que as equipes de vôlei ganham
 ao fim de uma partida da Super Liga são: placares de 3 a 0 ou 3 a 1,
 dão 3 pontos a equipe vencedora e nenhum ponto a equipe perdedora;
@@ -166,6 +168,7 @@ senão informar “NÚMERO TEM QUE TER 4 DÍGITOS”
 # print(numero_inverso)
 
 """
+Exercicio - 15
 Uma operadora de TV a cabo nacional oferece uma série de serviços aos seus
 assinantes. A conta a ser paga por um assinante, no fim do mês,
 é constituída por um valor fixo mensal somado ao consumo dos canais
@@ -261,3 +264,123 @@ Conta = Valor Fixo + Diárias Canais PPP + Serviços Extras + Imposto
 #         f'O erro está em "{diaria_input}" ou em "{extras_input}" \n'
 #         'Para corrigir você deve digitar apenas números nestas linhas.'
 #     )
+
+"""
+Exercicio - 16
+Uma escola de línguas tem uma fórmula bem peculiar para calcular
+o RESULTADO FINAL de seus alunos. Ela leva em conta o número de faltas,
+as três notas de provas, a nota do trabalho final e a idade do aluno.
+Faça um programa para ler as faltas, as notas das provas,
+a nota do trabalho final e a idade do aluno,
+e que calcule e imprima o seu resultado final.
+
+Nota Final = Média aritmética das duas maiores
+Notas das Provas X Peso1 + Nota do Trabalho Final X Peso2
+"""
+# Inputs
+# nome = input('Qual é seu nome: ')
+# faltas = input('quantas faltas você teve: ')
+# prova1 = input('nota da primeira prova: ')
+# prova2 = input('nota da segunda prova: ')
+# prova3 = input('nota da terceira prova: ')
+# trabalho = input('nota do trabalho final: ')
+# idade = input('qual sua idade: ')
+
+# # Set Variáveis
+# flag = False
+# erro = False
+# peso1 = 1
+# peso2 = 1
+# nota_final = 0
+# media = 0
+# resultado = 'reprovado'
+# # Bloco try converter variáveis e verificar erros de entrada.
+# try:
+#     faltas_int = int(faltas)
+#     prova1_float = float(prova1)
+#     prova2_float = float(prova2)
+#     prova3_float = float(prova3)
+#     trabalho_float = float(trabalho)
+#     idade_int = int(idade)
+#     flag = True
+
+#     try:
+#         if nome.isdigit():
+#             raise ValueError(
+#                 '!ERRO!\n'
+#                 'Use somente letras no nome.'
+#                 )
+#         elif nome.strip() == '':
+#             raise ValueError(
+#                 '!ERRO!\n'
+#                 'Nome vazio'
+#                 )
+#     except ValueError as ve:
+#         os.system('cls')
+#         print(ve)
+#         exit()
+
+# except ValueError:
+#     if flag is False:
+#         os.system('cls')
+#         print(
+#             '!ERRO!\n'
+#             'Você colocou letras no lugar de números em algum dos campos\n'
+#             'Por Favor, coloque apenas dígitos nestes campos.')
+#     exit()
+
+# # bloco if para ver qual as duas maiores provas.
+# if prova1_float > prova2_float and prova1_float < prova3_float:
+#     media = (prova1_float + prova3_float) / 2
+# elif prova1_float > prova3_float and prova1_float < prova2_float:
+#     media = (prova1_float + prova2_float) / 2
+# elif prova2_float > prova1_float and prova2_float < prova3_float:
+#     media = (prova2_float + prova3_float) / 2
+# elif prova2_float > prova3_float and prova2_float < prova1_float:
+#     media = (prova2_float + prova1_float) / 2
+# elif prova3_float > prova2_float and prova3_float < prova1_float:
+#     media = (prova3_float + prova1_float) / 2
+# else:
+#     media = (prova3_float + prova2_float) / 2
+
+# # bloco if para ver qual será o peso1 dependendo das faltas
+# if faltas_int <= 5:
+#     peso1 = 3
+# elif faltas_int > 5 and faltas_int <= 10:
+#     peso1 = 2
+# else:
+#     peso1
+
+# # bloco if para ver qual será o peso2 dependendo da idade
+# if idade_int <= 17:
+#     peso2
+# elif idade_int > 17 and idade_int <= 50:
+#     peso2 = 2
+# else:
+#     peso2 = 3
+
+# # calculo da nota final
+# nota_final = (media * peso1) + (trabalho_float * peso2)
+
+# # mostrando a nota final como Reprovado, Regular, Bom, Muito Bom ou Excelente
+# if nota_final <= 50:
+#     nota_final = 'Ruim'
+#     resultado = 'Reprovado'
+# elif nota_final > 50 and nota_final <= 70:
+#     nota_final = 'Regular'
+#     resultado = 'Aprovado'
+# elif nota_final > 70 and nota_final <= 80:
+#     nota_final = 'Bom'
+#     resultado = 'Aprovado'
+# elif nota_final > 80 and nota_final <= 90:
+#     nota_final = 'Muito Bom'
+#     resultado = 'Aprovado'
+# else:
+#     nota_final = 'Excelente'
+#     resultado = 'Aprovado'
+
+# os.system('cls')
+# print(
+#     f'{nome.capitalize()},\n'
+#     f'Sua nota final foi: {nota_final}\n'
+#     f'E você está: {resultado}')

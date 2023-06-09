@@ -4,6 +4,8 @@
     },
     "python.formatting.provider": "none",
     "cSpell.words": [
+        "codigo",
+        "diaria",
         "Equipe",
         "Exercicio",
         "flag",
@@ -14,6 +16,7 @@
         "PAPELAO",
         "Pontos",
         "Taubaté",
-        "testar"
+        "testar",
+        "tras"
     ]
 }

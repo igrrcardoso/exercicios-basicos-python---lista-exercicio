@@ -384,3 +384,35 @@ Notas das Provas X Peso1 + Nota do Trabalho Final X Peso2
 #     f'{nome.capitalize()},\n'
 #     f'Sua nota final foi: {nota_final}\n'
 #     f'E você está: {resultado}')
+
+"""
+Exercicio - 1 (switch)
+Faça um programa que leia o número referente a algum mês do ano,
+e imprima a que trimestre ele pertence.
+
+Meses       Trimestre
+1,2 e 3     1º
+4,5 e 6     2º
+7,8 e 9     3º
+10,11 e 12  4º
+"""
+
+
+# def verificar_trimestre(mes_do_ano):
+#     if mes_do_ano in ['1', '2', '3']:
+#         return '1º Trimestre'
+#     elif mes_do_ano in ['4', '5', '6']:
+#         return '2º Trimestre'
+#     elif mes_do_ano in ['7', '8', '9']:
+#         return '3º Trimestre'
+#     else:
+#         return '4º Trimestre'
+
+
+# mes_do_ano = input('Qual o mês do ano: ')
+# trimestre = verificar_trimestre(mes_do_ano)
+# print(
+#     f'Você está no {mes_do_ano}º mês do ano.\n'
+#     f'que é referente ao {trimestre}'
+# )
+

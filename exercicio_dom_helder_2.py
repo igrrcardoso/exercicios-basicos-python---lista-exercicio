@@ -416,3 +416,85 @@ Meses       Trimestre
 #     f'que é referente ao {trimestre}'
 # )
 
+"""
+Exercicio - 2 Switch
+Faça um programa que leia as 3 notas parciais de um aluno
+(valores inteiros entre 0 e 10), calcule a NOTA FINAL
+(média inteira das notas parciais)
+e imprima o CONCEITO do aluno conforme a tabela abaixo:
+
+Nota final:         Conceito:
+9 ou 10             A
+8                   B
+7                   C
+5 ou 6              D
+1,2,3 e 4           E
+
+"""
+
+# nota_parcial_1 = input('Primeira nota: ')
+# nota_parcial_2 = input('Segunda nota: ')
+# nota_parcial_3 = input('Terceira nota: ')
+
+# flag = True
+# media = 0
+# conceito = 'A'
+
+# try:
+#     nota1_int = int(nota_parcial_1)
+#     nota2_int = int(nota_parcial_2)
+#     nota3_int = int(nota_parcial_3)
+#     media = round(nota1_int + nota2_int + nota3_int) // 3
+#     flag = False
+# except ValueError:
+#     if flag:
+#         exit()
+
+# if media >= 9:
+#     conceito = 'A'
+# elif media >= 8:
+#     conceito = 'B'
+# elif media >= 7:
+#     conceito = 'C'
+# elif media >= 5 and media <= 6:
+#     conceito = 'D'
+# else:
+#     conceito = 'E'
+
+# print(f'O conceito final com base em suas notas é: "{conceito}"')
+
+
+"""
+Exercicio - 3 / Switch
+"""
+
+valor_imposto = input('Valor da multa: ')
+dias_atraso = input('Dias de atraso: ')
+
+erro = True
+percentual_imposto = 0
+percentual_dias_atraso = 0
+total = 0
+
+try:
+    valor_imposto_float = float(valor_imposto)
+    dias_atraso_float = float(dias_atraso)
+    erro = False
+except ValueError as ve:
+    if erro:
+        print('Erro', ve)
+        exit()
+
+if dias_atraso_float >= 5:
+    percentual_imposto = 0
+elif dias_atraso_float > 6 and dias_atraso_float <= 8:
+    percentual_imposto = valor_imposto_float * 0.02
+elif dias_atraso_float > 9 and dias_atraso_float <= 10:
+    percentual_imposto = valor_imposto_float * 0.1
+    percentual_dias_atraso = dias_atraso_float * 0.05
+else:
+    percentual_imposto = valor_imposto_float * 1.5
+    for dia in range(1, dias_atraso + 1):
+        total += 1
+
+print(percentual_imposto, total)

@@ -1,4 +1,4 @@
-# import os
+import os
 
 """ Pelas regras da CBV, a pontuação que as equipes de vôlei ganham
 ao fim de uma partida da Super Liga são: placares de 3 a 0 ou 3 a 1,
@@ -221,13 +221,13 @@ Conta = Valor Fixo + Diárias Canais PPP + Serviços Extras + Imposto
 # # verificando oque foi digitado no input codigo.
 #     elif len(codigo_input) > 1:
 #         print(
-#             f'!Erro!\nO Erro está em Código: "{codigo_input}", para corrigir:'
+#             f'!Erro!\nO Erro está no Código: "{codigo_input}",para corrigir:'
 #             '\n'
 #             'Digite um código por vez.'
 #             )
 #     elif codigo_input not in ["1", "2", "3"]:
 #         print(
-#             f'!Erro!\nO Erro está em Código: "{codigo_input}", para corrigir:'
+#             f'!Erro!\nO Erro está no Código: "{codigo_input}",para corrigir:'
 #             '\n'
 #             'Digite um plano válido.\n'
 #             'Planos Válidos = [1]Basic, [2]Advanced, [3]Master'
@@ -468,33 +468,110 @@ Nota final:         Conceito:
 Exercicio - 3 / Switch
 """
 
-valor_imposto = input('Valor da multa: ')
-dias_atraso = input('Dias de atraso: ')
+# valor_imposto = input('Valor da multa: ')
+# dias_atraso = input('Dias de atraso: ')
 
-erro = True
-percentual_imposto = 0
-percentual_dias_atraso = 0
-total = 0
+# erro = True
+# percentual_imposto = 0
+# percentual_dias_atraso = 0
+# total = 0
 
-try:
-    valor_imposto_float = float(valor_imposto)
-    dias_atraso_float = float(dias_atraso)
-    erro = False
-except ValueError as ve:
-    if erro:
-        print('Erro', ve)
-        exit()
+# try:
+#     valor_imposto_float = float(valor_imposto)
+#     dias_atraso_float = float(dias_atraso)
+#     erro = False
+# except ValueError as ve:
+#     if erro:
+#         print('Erro', ve)
+#         exit()
 
-if dias_atraso_float >= 5:
-    percentual_imposto = 0
-elif dias_atraso_float > 6 and dias_atraso_float <= 8:
-    percentual_imposto = valor_imposto_float * 0.02
-elif dias_atraso_float > 9 and dias_atraso_float <= 10:
-    percentual_imposto = valor_imposto_float * 0.1
-    percentual_dias_atraso = dias_atraso_float * 0.05
-else:
-    percentual_imposto = valor_imposto_float * 1.5
-    for dia in range(1, dias_atraso + 1):
-        total += 1
+# if dias_atraso_float >= 5:
+#     percentual_imposto = 0
+# elif dias_atraso_float > 6 and dias_atraso_float <= 8:
+#     percentual_imposto = valor_imposto_float * 0.02
+# elif dias_atraso_float > 9 and dias_atraso_float <= 10:
+#     percentual_imposto = valor_imposto_float * 0.1
+#     percentual_dias_atraso = dias_atraso_float * 0.05
+# else:
+#     percentual_imposto = valor_imposto_float * 1.5
+#     for dia in range(1, dias_atraso + 1):
+#         total += 1
 
-print(percentual_imposto, total)
+# print(percentual_imposto, total)
+
+"""
+Exercicio - 4 / Switch
+Uma loteria esportiva paga prêmios proporcionais
+a quantidade de acertos de cada apostador.
+Ela tem 13 jogos. Se o apostador acertar até 5 jogos ele não ganha nada,
+se acertar de 6 a 10 jogos ele ganha um outro cartão para apostar,
+se acertar 11 jogos ganha R$100, 12 jogos R$1000 e 13 jogos R$50000.
+Faça um programa que leia o nome do apostador e a quantidade de jogos
+que ele acertou, e calcule e imprima o prêmio que ele ganhou.
+
+Acertos                           Prêmio
+
+Até 5                             Nenhum
+De 6 até 10                       Outro Cartão
+11                                R$100,00
+12                                R$1.000,00
+13                                R$50.000,00
+
+Para testar:
+4 acertos -> Nenhum prêmio
+7 acertos -> Ganha outro cartão
+13 acertos -> Prêmio de 50.000,00
+"""
+
+while True:
+    nome = input('nos diga seu nome: ')
+    acertos = input('diga a quantidade de jogos acertados: ')
+
+    premio_str2 = ''
+    premio_str1 = ''
+    premio = 0
+
+    try:
+        acertos_int = int(acertos)
+
+        if nome.isdigit():
+            raise ValueError('!Erro!\nSeu nome não pode ser um digito.')
+        elif not acertos.isdigit():
+            raise ValueError('!Erro!\n Jogos acertados precisa ser um digito.')
+        elif acertos_int > 13:
+            raise ValueError('!Erro!\n Número máximo de acertos é 13.')
+
+        if acertos_int <= 5:
+            premio_str1 = 'Nenhum prêmio.'
+        elif acertos_int >= 6 and acertos_int <= 10:
+            premio_str2 = 'Você ganhou outro cartão para apostar.'
+        elif acertos_int == 11:
+            premio = 100
+        elif acertos_int == 12:
+            premio = 1000
+        else:
+            premio = 50000
+
+        if premio_str1:
+            print(f'{nome.capitalize()}, você não ganhou {premio_str1}')
+        elif premio_str2:
+            print(f'Parabéns {nome.capitalize()}, {premio_str2}')
+        elif premio:
+            print(f'Parabéns {nome.capitalize()}, você ganhou {premio:,.2f}')
+
+        sair = input('Você deseja sair? [S]im ou [N]ão: ').lower()
+
+        if sair == 's':
+            print('Saindo...')
+            exit()
+        else:
+            print('Continuando...')
+            os.system('cls')
+            continue
+
+    except ValueError as ve:
+        if 'invalid literal for int() with base 10' in str(ve):
+            print('Valor Inválido\nOs acertos precisam ser números inteiros')
+        else:
+            print(ve)
+        continue

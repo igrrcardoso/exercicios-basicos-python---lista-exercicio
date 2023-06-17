@@ -1,4 +1,4 @@
-import os
+# import os
 
 """ Pelas regras da CBV, a pontuação que as equipes de vôlei ganham
 ao fim de uma partida da Super Liga são: placares de 3 a 0 ou 3 a 1,
@@ -523,55 +523,307 @@ Para testar:
 13 acertos -> Prêmio de 50.000,00
 """
 
-while True:
-    nome = input('nos diga seu nome: ')
-    acertos = input('diga a quantidade de jogos acertados: ')
+# while True:
+#     nome = input('nos diga seu nome: ')
+#     acertos = input('diga a quantidade de jogos acertados: ')
 
-    premio_str2 = ''
-    premio_str1 = ''
-    premio = 0
+#     premio_str2 = ''
+#     premio_str1 = ''
+#     premio = 0
 
-    try:
-        acertos_int = int(acertos)
+#     try:
+#         acertos_int = int(acertos)
 
-        if nome.isdigit():
-            raise ValueError('!Erro!\nSeu nome não pode ser um digito.')
-        elif not acertos.isdigit():
-            raise ValueError('!Erro!\n Jogos acertados precisa ser um digito.')
-        elif acertos_int > 13:
-            raise ValueError('!Erro!\n Número máximo de acertos é 13.')
+#         if nome.isdigit():
+#             raise ValueError('!Erro!\nSeu nome não pode ser um digito.')
+#         elif not acertos.isdigit():
+#             raise ValueError('!Erro!\n Jogos acertados precisa ser digito.')
+#         elif acertos_int > 13:
+#             raise ValueError('!Erro!\n Número máximo de acertos é 13.')
 
-        if acertos_int <= 5:
-            premio_str1 = 'Nenhum prêmio.'
-        elif acertos_int >= 6 and acertos_int <= 10:
-            premio_str2 = 'Você ganhou outro cartão para apostar.'
-        elif acertos_int == 11:
-            premio = 100
-        elif acertos_int == 12:
-            premio = 1000
-        else:
-            premio = 50000
+#         if acertos_int <= 5:
+#             premio_str1 = 'Nenhum prêmio.'
+#         elif acertos_int >= 6 and acertos_int <= 10:
+#             premio_str2 = 'Você ganhou outro cartão para apostar.'
+#         elif acertos_int == 11:
+#             premio = 100
+#         elif acertos_int == 12:
+#             premio = 1000
+#         else:
+#             premio = 50000
 
-        if premio_str1:
-            print(f'{nome.capitalize()}, você não ganhou {premio_str1}')
-        elif premio_str2:
-            print(f'Parabéns {nome.capitalize()}, {premio_str2}')
-        elif premio:
-            print(f'Parabéns {nome.capitalize()}, você ganhou {premio:,.2f}')
+#         if premio_str1:
+#             print(f'{nome.capitalize()}, você não ganhou {premio_str1}')
+#         elif premio_str2:
+#             print(f'Parabéns {nome.capitalize()}, {premio_str2}')
+#         elif premio:
+#             print(f'Parabéns {nome.capitalize()}, você ganhou {premio:,.2f}')
 
-        sair = input('Você deseja sair? [S]im ou [N]ão: ').lower()
+#         sair = input('Você deseja sair? [S]im ou [N]ão: ').lower()
 
-        if sair == 's':
-            print('Saindo...')
-            exit()
-        else:
-            print('Continuando...')
-            os.system('cls')
-            continue
+#         if sair == 's':
+#             print('Saindo...')
+#             exit()
+#         else:
+#             print('Continuando...')
+#             os.system('cls')
+#             continue
 
-    except ValueError as ve:
-        if 'invalid literal for int() with base 10' in str(ve):
-            print('Valor Inválido\nOs acertos precisam ser números inteiros')
-        else:
-            print(ve)
-        continue
+#     except ValueError as ve:
+#         if 'invalid literal for int() with base 10' in str(ve):
+#             print('Valor Inválido\nOs acertos precisam ser números inteiros')
+#         else:
+#             print(ve)
+#         continue
+
+"""
+Exercicio - 5 / Switch
+Faça um programa que leia o nome de um estado do Brasil
+e imprima a que região ele pertence
+"""
+
+# estado = input(
+#  'digite as inicias do estado em que\
+#  você está localizado: '
+#     ).lower()
+# regiao = ''
+
+# if estado.isdigit():
+#     print('!ERRO!\nValor Inválido, digite as *INICIAIS* do seu estado.')
+#     exit()
+
+# if estado in ['es', 'mg', 'rj', 'sp']:
+#     regiao = 'Sudeste'
+# elif estado in ['sc', 'rs', 'pr']:
+#     regiao = 'Sul'
+# elif estado in ['ma', 'pi', 'ce', 'rn', 'pb', 'pe', 'al', 'se', 'ba']:
+#     regiao = 'Nordeste'
+# elif estado in ['go', 'mt', 'ms', 'df']:
+#     regiao = 'Centro-Oeste'
+# else:
+#     regiao = 'Norte'
+# print(f'Você está localizado na região: "{regiao}"')
+
+"""
+Exercicio - 6
+Faça um programa que leia o nome de uma equipe de futebol,
+presente na tabela abaixo, e informe o estado do Brasil a que ela pertence.
+
+Equipes                                         Estado
+América, Atlético, Cruzeiro, Villa Nova         Minas Gerais
+Botafogo, Flamengo, Fluminense, Vasco           Rio De Janeiro
+Corinthians, Palmeiras, Santos, São Paulo       São Paulo
+Grêmio, Internacional, Juventude                Rio Grande Do Sul
+Náutico, Santa Cruz, Sport                      Pernambuco
+"""
+
+# equipe = input('insira o time de futebol aqui: ').capitalize()
+
+# estado = ''
+
+# if equipe.isdigit():
+#     print('Valor Inválido\nDigite o time de futebol.')
+
+# if equipe in ['América', 'Atlético', 'Cruzeiro', 'Villa nova']:
+#     estado = 'Minas Gerais'
+# elif equipe in ['Botafogo', 'Flamengo', 'Fluminense', 'Vasco']:
+#     estado = 'Rio De Janeiro'
+# elif equipe in ['Corinthians', 'Palmeiras', 'Santos', 'São paulo']:
+#     estado = 'São Paulo'
+# elif equipe in ['Grêmio', 'Internacional', 'Juventude']:
+#     estado = 'Rio Grande Do Sul'
+# elif equipe in ['Náutico', 'Santa cruz', 'Sport']:
+#     estado = 'Pernambuco'
+# else:
+#     print('Time Inválido.')
+#     exit()
+
+# print(f'O seu time está localizado no estado: {estado}')
+
+"""
+Exercicio - 7
+Faça um programa que faça 5 perguntas para uma pessoa sobre um crime.
+As perguntas são:
+
+Telefonou para a vítima?
+Esteve no local do crime?
+Mora perto da vítima?
+Devia para a vítima?
+Já trabalhou com a vítima?
+
+O programa deve no final emitir uma classificação sobre a participação
+da pessoa no crime. Se a pessoa responder positivamente a 2 questões
+ela deve ser classificada como “Suspeita”,
+entre 3 e 4 como “Cúmplice” e 5 como “Assassino“.
+Caso contrário, ele será classificado como “Inocente“.
+"""
+
+# telefonou_vitima = input('Você telefonou para a vítima? [S] ou [N]').lower()
+# esteve_local_crime = input('Você esteve no local do crime? [S] ou [N]').lower()
+# mora_perto_vitima = input('Você mora perto da vítima? [S] ou [N] ').lower()
+# devia_vitima = input('Você devia a vítima? [S] ou [N] ').lower()
+# trabalhou_vitima = input(
+#     'Você já trabalhou com a vítima?\
+#     [S] ou [N] ').lower()
+
+# classificação = 0
+# classificado = ''
+# erro = 0
+
+# if telefonou_vitima in ['s']:
+#     classificação += 1
+# if esteve_local_crime in ['s']:
+#     classificação += 1
+# if mora_perto_vitima in ['s']:
+#     classificação += 1
+# if devia_vitima in ['s']:
+#     classificação += 1
+# if trabalhou_vitima in ['s']:
+#     classificação += 1
+
+# if telefonou_vitima in ['n']:
+#     classificação = classificação
+# if esteve_local_crime in ['n']:
+#     classificação = classificação
+# if mora_perto_vitima in ['n']:
+#     classificação = classificação
+# if devia_vitima in ['n']:
+#     classificação = classificação
+# if trabalhou_vitima in ['n']:
+#     classificação = classificação
+
+# if classificação <= 2:
+#     classificado = 'Suspeito(a)'
+# elif classificação >= 3 and classificação <= 4:
+#     classificado = 'Cúmplice'
+# elif classificação == 5:
+#     classificado = 'Assassino'
+# else:
+#     erro = 1
+
+# if (
+#     telefonou_vitima not in ['s', 'n']
+#     or esteve_local_crime not in ['s', 'n']
+#     or mora_perto_vitima not in ['s', 'n']
+#     or devia_vitima not in ['s', 'n']
+#     or trabalhou_vitima not in ['s', 'n']
+# ):
+#     erro = 1
+
+# if (
+#     telefonou_vitima.isdigit()
+#     or esteve_local_crime.isdigit()
+#     or mora_perto_vitima.isdigit()
+#     or devia_vitima.isdigit()
+#     or trabalhou_vitima.isdigit()
+# ):
+#     erro = 2
+
+# if erro == 1:
+#     print('ERRO:\nPor Favor responda com [s] ou [n].')
+#     exit()
+# elif erro == 2:
+#     print('ERRO:\nAs respostas não podem conter números.')
+#     exit()
+
+# print(f'Você foi classificado como "{classificado}"')
+
+"""
+Exercicio - 8
+O Hipermercado Tabajara está com uma promoção de carnes que é imperdível.
+Confira:
+
+Tipo De Carne           Até 5kg             Acima de 5kg
+File duplo              R$ 4,90 por Kg      R$ 5,80 por Kg
+Alcatra                 R$ 5,90 por Kg      R$ 6,80 por Kg
+Picanha                 R$ 6,90 por Kg      R$ 7,80 por Kg
+
+Para atender a todos os clientes, cada cliente poderá levar apenas
+um dos tipos de carne da promoção, porém não há limites para a quantidade
+de carne por cliente.
+Se compra for feita no cartão Tabajara o cliente receberá
+ainda um desconto de 5% sobre o total a compra.
+Faça um programa que peça o tipo e a quantidade de carne comprada pelo usuário,
+e se ele pagará com cartão Tabajara. Depois gere um cupom fiscal,
+contendo as informações da compra: tipo e quantidade de carne,
+preço total, tipo de pagamento, valor do desconto e valor a pagar.
+"""
+# # perguntas ao consumidor
+# tipo_carne_cliente = input('Qual carne você quer comprar? ').lower()
+# quantidade_carne_cliente = float(input('Quantos kg você levara de carne? '))
+# tipo_pagamento = input(
+#  'Você vai pagar com o cartão Tabajara?\
+#  [s] ou [n]'
+#  ).lower()
+# # variáveis
+# erro = 0
+# kg_file = 4.90 * quantidade_carne_cliente
+# kg_file_acima_5kg = 5.80 * quantidade_carne_cliente
+# kg_alcatra = 5.90 * quantidade_carne_cliente
+# kg_alcatra_acima_5kg = 6.80 * quantidade_carne_cliente
+# kg_picanha = 6.90 * quantidade_carne_cliente
+# kg_picanha_acima_5kg = 7.80 * quantidade_carne_cliente
+# total_compra = 0
+# desconto = 0
+# # bloco-if para saber qual tipo de carne o cliente escolheu, calculo de kg's
+# # e erro 1
+# if (
+#     tipo_carne_cliente == 'file duplo'
+#     and quantidade_carne_cliente <= 5
+# ):
+#     total_compra = kg_file
+# elif (
+#     tipo_carne_cliente == 'file duplo'
+#     and quantidade_carne_cliente > 5
+# ):
+#     total_compra = kg_file_acima_5kg
+# elif (
+#     tipo_carne_cliente == 'alcatra'
+#     and quantidade_carne_cliente <= 5
+# ):
+#     total_compra = kg_alcatra
+# elif (
+#     tipo_carne_cliente == 'alcatra'
+#     and quantidade_carne_cliente > 5
+# ):
+#     total_compra = kg_alcatra_acima_5kg
+# elif (
+#     tipo_carne_cliente == 'picanha'
+#     and quantidade_carne_cliente <= 5
+# ):
+#     total_compra = kg_picanha
+# elif (
+#     tipo_carne_cliente == 'picanha'
+#     and quantidade_carne_cliente > 5
+# ):
+#     total_compra = kg_picanha_acima_5kg
+# else:
+#     erro = 1
+# # bloco-if para saber se o cliente usou o cartão Tabajara e erro 2
+# if tipo_pagamento in ['s', 'sim']:
+#     desconto = total_compra * 0.05
+#     total_a_pagar = total_compra - desconto
+# elif tipo_pagamento in ['n', 'não']:
+#     total_a_pagar = total_compra
+#     desconto = 0
+# else:
+#     erro = 2
+# # tratamento dos erros 1 e 2
+# if erro == 1:
+#     print(
+#         'Valor Inválido\n'
+#         'As Carnes válidas são:\n'
+#         '"File duplo, Alcatra, Picanha"'
+#     )
+#     exit()
+# elif erro == 2:
+#     print('Valor Inválido\n'
+#           'Você só pode escolher entre pagar [s] ou não [n] com o cartão'
+#           )
+#     exit()
+# # cupom fiscal com todas informações da compra e valor a ser paga + desconto
+# print(f'''
+# total da compra foi: R${total_compra:,.2f}\n
+# total a pagar é: R${total_a_pagar:,.2f}\n
+# você teve R${desconto:,.2f} de desconto
+# ''')

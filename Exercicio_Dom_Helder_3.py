@@ -75,4 +75,73 @@ Observação: Interrompa as repetições se o usuário digitar -1 na nota final.
 #         resultado = 'Reprovado'
 #     print(f'ALUNO {resultado.upper()}')
 
+"""
+Exercício - 4
+Faça um programa que leia o nome e sexo
+(“M” para masculino e “F” para feminino) de um grupo de 100 pessoas
+e ao final imprima a quantidade de mulheres.
+"""
+
+# qtd_homens = 0
+# qtd_mulheres = 0
+
+# for genero in range(0, 100):
+#     nome = input('Diga seu nome: ')
+#     genero = input('Qual seu sexo [M] ou [F]: ').capitalize()
+#     if genero == 'F':
+#         qtd_mulheres += 1
+#     elif genero == 'M':
+#         qtd_homens += 1
+#     else:
+#         print('Valor Inválido, use [F] para feminino ou [M] para masculino')
+
+# print(f'''
+# a quantidade de mulheres é: {qtd_mulheres}
+# e a de homens é {qtd_homens}
+#     ''')
+
+"""
+Faça um programa que calcule e imprima a quantidade de postos de gasolina
+cujos preços estão abaixo de R$3,00 e a quantidade de postos cujos preços
+ultrapassam os R$4,00. Para isto o programa deverá ler
+o nome e o preço da gasolina de 68 postos de gasolina pesquisados.
+"""
+
+# erro = ''
+# qtd_postos_menor_preco_gasolina = 0
+# qtd_postos_maior_preco_gasolina = 0
+
+# for i in range(0, 68):
+#     nome_posto = input('Entre com o nome do posto: ')
+#     preco_gasolina = input('Entre com o preço da gasolina: ')
+#     preco_gasolina_float = float(preco_gasolina)
+#     if preco_gasolina_float < 3:
+#         qtd_postos_menor_preco_gasolina += 1
+#     elif preco_gasolina_float > 4:
+#         qtd_postos_maior_preco_gasolina += 1
+#     else:
+#         print('Valor deve ser menor que 3 ou maior que 4')
+
+#     if nome_posto.isdigit():
+#         erro = 1
+#     elif not preco_gasolina.isdigit():
+#         erro = 2
+#     else:
+#         erro = 3
+
+#     if erro == 1:
+#         print('O nome do posto não pode ser um dígito.')
+#         continue
+#     elif erro == 2:
+#         print('O preço da gasolina precisa ser um dígito')
+#     elif erro == 3:
+#         print('Valor Inválido.')
+
+# menor_preco = qtd_postos_menor_preco_gasolina
+# maior_preco = qtd_postos_maior_preco_gasolina
+
+# print(f'''
+# Quantidade de postos com a gasolina abaixo de 3R$: {menor_preco}
+# Quantidade de postos com a gasolina acima de 4R$: {maior_preco}
+#     ''')
 

@@ -1,9 +1,8 @@
 # Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
 
-verificar = input('digite uma letra : ')
+verificar = input('digite uma letra : ').lower()
 
-if verificar in 'A' 'a' 'e' 'E' 'i' 'I' 'o' 'O' 'u' 'U':
+if verificar in 'a' 'e' 'i' 'o' 'u':
     print(f'{verificar} é uma vogal')
 else:
     print(f'{verificar} é uma consoante')
-    

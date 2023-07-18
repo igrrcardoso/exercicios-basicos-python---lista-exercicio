@@ -1,12 +1,15 @@
 """
-As Organizações Tabajara resolveram dar um aumento de salário aos seus colaboradores
+As Organizações Tabajara resolveram dar um aumento de salário aos seus
+colaboradores
 e lhe contraram para desenvolver o programa que calculará os reajustes.
-Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério,
+Faça um programa que recebe o salário de um colaborador e o reajuste segundo o
+seguinte critério,
 baseado no salário atual:
 salários até R$ 280,00 (incluindo) : aumento de 20%
 salários entre R$ 280,00 e R$ 700,00 : aumento de 15%
 salários entre R$ 700,00 e R$ 1500,00 : aumento de 10%
-salários de R$ 1500,00 em diante : aumento de 5% Após o aumento ser realizado, informe na tela:
+salários de R$ 1500,00 em diante : aumento de 5% Após o aumento ser realizado,
+informe na tela:
 o salário antes do reajuste;
 o percentual de aumento aplicado;
 o valor do aumento;
@@ -42,13 +45,14 @@ percentual_280 = ((salario_280_depois_reajuste - salario) / salario) * 100
 
 percentual_280_700 = ((salario_280_700_dps_reajuste - salario) / salario) * 100
 
-percentual_700_1500 = ((salario_700_1500_dps_reajuste - salario) / salario) * 100
+percentual_700_1500 = (
+    (salario_700_1500_dps_reajuste - salario) / salario) * 100
 
 percentual_1500 = ((salario_1500_dps_reajuste - salario) / salario) * 100
 
 # blocos if
 
-#se o salario for igual ou menor que 280
+# se o salario for igual ou menor que 280
 
 if SALARIO_280:
     print(f'''
@@ -58,7 +62,7 @@ o valor do aumento foi: R$ {vinte_porcento}
 seu novo salario é: R$ {salario_280_depois_reajuste}
 ''')
 
-# se o salario for maior que 280 e menor que 700    
+# se o salario for maior que 280 e menor que 700
 elif SALARIO_280_700:
     print(f'''
 salario antes do reajuste: R$ {salario}
